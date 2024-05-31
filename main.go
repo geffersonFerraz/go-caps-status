@@ -35,16 +35,16 @@ func isCapsLockOn() bool {
 
 func onReady() {
 	systray.SetTitle("Caps lock")
-	go func() {
-		for {
-			select {
-			case icon := <-ci:
-				systray.SetIcon(icon)
-			case text := <-ct:
-				systray.SetTitle(text)
-			}
+
+	for {
+		select {
+		case icon := <-ci:
+			systray.SetIcon(icon)
+		case text := <-ct:
+			systray.SetTitle(text)
 		}
-	}()
+	}
+
 }
 
 func onExit() {
@@ -62,6 +62,7 @@ func main() {
 	firstRun := true
 
 	for {
+		time.Sleep(250 * time.Millisecond)
 		stateNow := isCapsLockOn()
 		firstRun = false
 		if !firstRun && stateNow == lastState {
@@ -79,8 +80,6 @@ func main() {
 
 		}
 		lastState = stateNow
-		time.Sleep(100 * time.Millisecond)
-
 	}
 
 }
