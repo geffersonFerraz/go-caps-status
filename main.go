@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/emersion/go-autostart"
+	"github.com/geffersonFerraz/go-caps-status/autostart"
 	"github.com/getlantern/systray"
 )
 
