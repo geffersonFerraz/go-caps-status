@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	_ "embed"
 	"log"
 	"os"
 	"os/exec"
@@ -12,6 +13,12 @@ import (
 	"github.com/emersion/go-autostart"
 	"github.com/getlantern/systray"
 )
+
+//go:embed coff.png
+var coff []byte
+
+//go:embed conn.png
+var conn []byte
 
 const ShellToUse = "bash"
 
