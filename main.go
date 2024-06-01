@@ -9,8 +9,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/geffersonFerraz/go-caps-status/autostart"
-	"github.com/getlantern/systray"
+	"github.com/geffersonFerraz/go-caps-status/pkg/autostart"
+	"github.com/geffersonFerraz/go-caps-status/pkg/systray"
 )
 
 const ShellToUse = "bash"
