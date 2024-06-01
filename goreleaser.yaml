@@ -1,0 +1,30 @@
+project_name: gocaps
+builds:
+  -
+    env: [CGO_ENABLED=0]
+    id: "gocaps"
+    goos:
+      - linux
+    binary: gocaps
+    goarch:
+      - amd64
+    ldflags:
+      - -s -w
+    flags:
+      - -tags=embed
+    main: main.go
+nfpms:
+-
+  maintainer: Gefferson Ferraz <gocaps@gefferson.com.br>
+  id: gocaps
+  description: GoCAPs
+  license: MIT
+  package_name: gocaps
+  bindir: /usr/bin
+  formats:
+  - deb
+  builds:
+    - gocaps
+release:
+  replace_existing_artifacts: true
+  draft: true
