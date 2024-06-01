@@ -10,8 +10,8 @@ builds:
       - amd64
     ldflags:
       - -s -w
-    flags:
-      - -tags embed
+    tags:
+      - embed 
     main: main.go
 nfpms:
 -
