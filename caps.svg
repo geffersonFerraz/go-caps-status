@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="800px" height="800px" viewBox="0 0 16 16" fill="#000000" class="bi bi-capslock-fill" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 7.27 1.047 C 7.665 0.625 8.335 0.625 8.73 1.047 L 15.075 7.817 C 15.675 8.455 15.221 9.5 14.345 9.5 L 11.5 9.5 L 11.466 15.126 C 11.466 15.678 4.414 15.54 4.414 14.988 L 4.5 9.5 L 1.654 9.5 C 0.78 9.5 0.326 8.455 0.924 7.816 L 7.27 1.047 Z" style="fill: rgb(0, 0, 255); stroke: rgb(115, 255, 0);"/>
+  <text style="fill: rgba(10, 11, 10, 0.08); font-family: Arial, sans-serif; font-size: 0.5px; white-space: pre;" transform="matrix(2.849966, 0, 0, 2.375, -10.850718, 2.272211)" x="6.458" y="5.533">G</text>
+</svg>

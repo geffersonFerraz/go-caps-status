@@ -46,7 +46,6 @@ func isCapsLockOn() int16 {
 }
 
 var ci chan []byte
-var ct chan string
 
 var app *autostart.App
 var selfLocation string
@@ -61,10 +60,9 @@ func main() {
 	}
 
 	ci = make(chan []byte)
-	ct = make(chan string)
 
 	go systray.Run(func() {
-		systray.SetTitle("Caps ")
+		systray.SetTitle("")
 
 		if app.IsEnabled() {
 			mDisableOrig := systray.AddMenuItem("Disable autostart", "Disable GoCAPS autostart")
@@ -106,8 +104,6 @@ func main() {
 			select {
 			case icon := <-ci:
 				systray.SetIcon(icon)
-			case text := <-ct:
-				systray.SetTitle(text)
 			}
 		}
 	}, func() {
@@ -117,7 +113,7 @@ func main() {
 	lastState := int16(-1)
 
 	for {
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(20 * time.Millisecond)
 		stateNow := isCapsLockOn()
 
 		if stateNow == lastState {
@@ -126,11 +122,9 @@ func main() {
 
 		if stateNow == 1 {
 			ci <- conn
-			ct <- "Caps ON"
 
 		} else {
 			ci <- coff
-			ct <- "Caps OFF"
 
 		}
 		lastState = stateNow
